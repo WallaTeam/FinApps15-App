@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('ArticleAddController', function($scope, $ionicModal, $timeout,$http,$state) {
+.controller('ArticleAddController', function($scope, $ionicModal, $timeout,$http,$state,ionicToast,$ionicHistory,$cordovaBarcodeScanner) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -12,10 +12,20 @@ angular.module('starter.controllers')
   // Form data for the login modal
   $scope.loginData = {};
 
-  $scope.articles;
+  $scope.article =
+  {
+  "id": undefined,
+  "name":"",
+  "category":"",
+  "price":undefined,
+  "vat":undefined,
+  "description": "",
+  "stock":undefined
 
 
-$scope.filtro = "";
+};
+
+
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
@@ -24,18 +34,34 @@ $scope.filtro = "";
   });
 
 
-
-//Muestra un evento concreto
-    $scope.displayArticle = function (id) {
-        $state.go('app.articleDetail', {id: id});
+ $scope.scanBarcode = function() {
+      console.log("hi");
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            $scope.article.id = imageData.text;
+        }, function(error) {
+            console.log("Ha ocurrido un error: " + error);
+        });
     };
 
 
 
-  $scope.addArticle = function(){
-    $state.go('app.addArticle');
+
+
+
+  $scope.saveAdd = function(){
+    
+    ionicToast.show('Artículo actualizado', 'bottom', false, 1000);
+     $ionicHistory.goBack();
+
+
   }
 
+  $scope.discardAdd = function(){
+   
+    ionicToast.show('Artículo descartado', 'bottom', false, 1000);
+     $ionicHistory.goBack();
+
+  }
 
   $http.get('data/articles.json')
        .then(function(res){

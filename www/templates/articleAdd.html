@@ -1,0 +1,80 @@
+<!--
+Vista de detalle de evento.
+-->
+<ion-view view-title="Ver artículo">
+
+<ion-nav-bar class="bar bar-assertive">
+<ion-nav-back-button>
+</ion-nav-back-button>
+
+
+<ion-nav-buttons side="left">
+<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+
+
+
+
+<button   class="button button-icon button-clear ion-checkmark-round" ng-click="saveAdd()"></button>
+<button   class="button button-icon button-clear ion-close-round" ng-click="discardAdd()"></button>
+</ion-nav-buttons>
+
+</ion-nav-bar>
+<ion-content class="description-background">
+<div class="list card">
+	<div class="item">
+		<h2>Detalles del artículo</h2>
+
+
+	</div>
+
+	<div class="list">
+		
+
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>ID de producto</b></span></span>
+			<input type="text" class="editinput" placeholder="E.g: 3431234 " ng-model="article.id" >
+		
+		</label>
+		<button class="button button-block button-positive" ng-click="scanBarcode(); ">
+  			Leer código de barras
+			</button>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Nombre</b></span></span>
+			<input type="text" class="editinput" placeholder="E.g: Lavadora " ng-model="article.name" >
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Categoría</b></span></span>
+			<input type="text" class="editinput" placeholder="E.g: Electrodomésticos " ng-model="article.category" >
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Precio base (€)</b></span></span>
+			<input type="number" class="editinput" placeholder="E.g: 23.45€ " ng-model="article.price" >
+		</label>
+		
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>IVA (€)</b></span></span>
+	
+			<input type="number" class="editinput" placeholder="E.g: 21 " ng-model="article.vat">
+		</label>
+		
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Stock (uds)</b></span></span>
+			<span ng-show="!editing"> <br/>{{article.stock}}</span>
+			<input type="number" class="editinput" placeholder="E.g: 44 " ng-model="article.stock" >
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Descripción</b></span>
+			<textarea rows="5" class="editinput" type="text" placeholder="E.g: Este producto pretende revolucionar el mercado de las finanzas." ng-model="article.description"></textarea>
+		</label>
+	</div>
+
+</div>
+
+
+
+
+</ion-content>
+</ion-view>

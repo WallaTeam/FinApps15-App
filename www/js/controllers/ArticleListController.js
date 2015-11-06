@@ -33,7 +33,7 @@ $scope.filtro = "";
 
 
   $scope.addArticle = function(){
-    $state.go('app.articleAddController');
+    $state.go('app.articleAdd');
   }
 
 

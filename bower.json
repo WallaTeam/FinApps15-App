@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ionic-material-design-lite": "~0.5.5",
-    "ionic-toast": "~0.2.0"
+    "ionic-toast": "~0.2.0",
+    "ngCordova": "~0.1.20-alpha"
   }
 }
