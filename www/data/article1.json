@@ -1,0 +1,11 @@
+{
+	"id":1,
+	"name":"Monster Rehab",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod fringilla augue, id pulvinar nunc sodales et. Vivamus id tincidunt purus, vitae luctus massa. Aliquam hendrerit vehicula purus vel tristique. Mauris viverra efficitur purus in bibendum. Integer consectetur suscipit quam in cursus.",
+	"stock":100
+
+
+}

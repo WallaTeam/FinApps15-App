@@ -1,1 +1,26 @@
 /* Empty. Add your own CSS if you like */
+
+.nombreArticulo{
+
+	font-size:120%;
+	font-weight: bold;
+
+}
+
+.left-image{
+    max-width:100%;
+    max-height:60px;
+}
+
+.articulo-detalles input{float:left;}
+
+.editinput{
+	 border: 2px solid #dadada !important;
+     border-radius: 7px !important;
+}
+
+.editinput:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}

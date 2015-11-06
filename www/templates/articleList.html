@@ -1,0 +1,40 @@
+<ion-view view-title="Lista de artículos">
+<ion-nav-bar class="bar bar-assertive">
+<ion-nav-back-button>
+</ion-nav-back-button>
+
+
+<ion-nav-buttons side="left">
+<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+<button class="button button-icon button-clear ion-plus" ng-click="addArticle()"></button>
+</ion-nav-buttons>
+
+
+</ion-nav-bar>
+
+
+  <ion-content>
+   <form ng-submit="buscar()"  class="search ng-cloak">
+          <label class="item item-input  barraBusqueda" >
+              <i class="icon ion-search placeholder-icon letraNegra"></i>
+              <input type="search" ng-model="filtro" placeholder="Buscar por título y/o lugar">
+          </label>
+      </form>
+    <ion-list>
+ <div class="list">
+
+    <a  ng-repeat="article in articles | filter:{ name: filtro }" class="item item-avatar" href="#" ng-click="displayArticle(article.id)">
+      <img src="img/article.png">
+      <h2>{{article.name}}</h2>
+      <i class="icon ion-chevron-right icon-accessory" style="float:right;"></i>
+      <p>{{article.category}} - {{article.stock}} en Stock</p>
+
+    </a>
+
+</div>
+</ion-list>
+  </ion-content>
+</ion-view>

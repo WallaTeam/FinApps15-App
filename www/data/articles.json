@@ -1,0 +1,94 @@
+
+[
+{
+	"id":1,
+	"name":"Barra de pan horneada",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Description",
+	"stock":100
+
+
+},
+{
+	"id":2,
+	"name":"Coca Cola Zero",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Description",
+	"stock":100
+
+
+},
+{
+	"id":3,
+	"name":"Monster Rehab",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Description",
+	"stock":100
+
+
+},
+{
+	"id":4,
+	"name":"Example Article 4",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Description",
+	"stock":100
+
+
+},
+{
+	"id":5,
+	"name":"Monster Rehab",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Description",
+	"stock":100
+
+
+},
+{
+	"id":6,
+	"name":"Monster Rehab",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Description",
+	"stock":100
+
+
+},
+{
+	"id":7,
+	"name":"Monster Rehab",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Description",
+	"stock":100
+
+
+},
+{
+	"id":8,
+	"name":"Monster Rehab",
+	"category":"Mesas",
+	"price":10.12,
+	"vat":21,
+	"description": "Description",
+	"stock":100
+
+
+}
+
+
+
+]
