@@ -28,7 +28,7 @@ Vista de detalle de evento.
 	<div class="list">
 	<label class="item item-input item-stacked-label">
 			<span class="input-label"><b>Venta nº:</b></span></span>
-			<span> <br/>{{sale.id}}</span>
+			<span> <br/>{{sale.code}}</span>
 		</label>
 		<label class="item item-input item-stacked-label">
 			<span class="input-label"><b>Fecha:</b></span></span>
@@ -36,7 +36,7 @@ Vista de detalle de evento.
 		</label>
 		<label class="item item-input item-stacked-label">
 			<span class="input-label"><b>Cliente:</b></span></span>
-			<span> <br/>{{sale.client}}</span>
+			<span> <br/>{{client.name}}</span>
 		</label>
 		<label class="item item-input item-stacked-label">
 			<span class="input-label"><b>Precio total:</b></span></span>
@@ -50,7 +50,7 @@ Vista de detalle de evento.
     
     <div class="row"  >
   <div class="col col-80" ><b>{{article.name}}</b></div>
-  <div class="col col-20" >{{article.price*(1 + article.vat/100) | number: 2}} €</div>
+  <div class="col col-20" >{{article.prize*(1 + article.vat/100) | number: 2}} €</div>
 </div>
   </div>
 	</div>

@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('SaleAddController', function($scope, $ionicModal, $timeout,$http,$state,ionicToast,$ionicHistory,$cordovaBarcodeScanner,$ionicPopup,$ionicLoading) {
+.controller('SaleAddController', function($scope, $ionicModal, $timeout,$http,$state,ionicToast,$ionicHistory,$cordovaBarcodeScanner,$ionicPopup,$ionicLoading,$cordovaDialogs) {
 
 
   $scope.screen = 1;
@@ -31,7 +31,8 @@ angular.module('starter.controllers')
  $scope.scanBarcode = function() {
       
         $cordovaBarcodeScanner.scan().then(function(imageData) {
-            //Añadir uno nuevo
+            //Añadir uno 
+            $cordovaDialogs.beep(1);
             $scope.addArticleById(imageData.text);
         }, function(error) {
             console.log("Ha ocurrido un error: " + error);
@@ -114,7 +115,7 @@ $scope.showManualClient = function() {
        .then(function(res){
         $ionicLoading.hide();
           $scope.client = res.data;  
-          $scope.sale.client = res;
+          //$scope.sale.client = res;
           console.log("Cliente " + res);
                   
         })
@@ -132,7 +133,7 @@ $scope.showManualClient = function() {
 
 $scope.showNFC = function() {
   $scope.data = {}
-  $scope.image = "img/visa.png";
+  $scope.image = "img/nfc.png";
 
   // An elaborate, custom popup
   var myPopup = $ionicPopup.show({
@@ -157,7 +158,7 @@ $scope.showNFC = function() {
   });
 
     $timeout(function() {
-      $scope.image = "img/visa_ok.png"
+      $scope.image = "img/nfc_ok.png"
     //close the popup after 3 seconds for some reason
         $timeout(function() {
         myPopup.close();

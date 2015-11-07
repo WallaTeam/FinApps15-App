@@ -22,7 +22,7 @@
     <ion-list>
  <div class="list">
 
-    <a  ng-repeat="sale in sales | filter:{ id: filtro }" class="item item-avatar" href="#" ng-click="displaySale(sale.id)">
+    <a  ng-repeat="sale in sales | filter:{ id: filtro }" class="item item-avatar" href="#" ng-click="displaySale(sale.code)">
       <img src="img/bill.jpg">
       <h2>Venta nº {{sale.code}}</h2>
       <i class="icon ion-chevron-right icon-accessory" style="float:right;"></i>

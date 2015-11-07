@@ -7,6 +7,8 @@
 angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordova','chart.js'])
 
 .run(function($ionicPlatform,$rootScope,$ionicHistory) {
+
+  
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
       $ionicHistory.clearCache();
    });
@@ -23,6 +25,10 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    if (cordova.platformId == 'android') {
+    StatusBar.backgroundColorByHexString("#2c505c");
+}
   });
 })
 
