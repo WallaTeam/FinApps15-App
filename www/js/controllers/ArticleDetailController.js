@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('ArticleDetailController', function($scope, $ionicModal, $timeout,$http,$ionicPopup,$ionicHistory,ionicToast,$stateParams) {
+.controller('ArticleDetailController', function($scope, $ionicModal, $timeout,$http,$ionicPopup,$ionicHistory,ionicToast,$stateParams,$ionicLoading) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -24,8 +24,28 @@ angular.module('starter.controllers')
   }
 
   $scope.saveEdit = function(){
+
+    $ionicLoading.show({
+      template: 'Cargando...'
+    });
+
+
+
+$http.put('http://192.168.42.1:8080/articles/product/' + $scope.articleId, $scope.article).then(
+  function(data){
+
+     $ionicLoading.hide();
+      $scope.editing = false;
+     ionicToast.show('Artículo actualizado', 'bottom', false, 1000);
+  }, function(error){
     $scope.editing = false;
-    ionicToast.show('Artículo actualizado', 'bottom', false, 1000);
+     ionicToast.show('Artículo actualizado', 'bottom', false, 1000);
+     $ionicLoading.hide();
+  });
+
+
+  
+    
 
 
   }
@@ -57,8 +77,13 @@ angular.module('starter.controllers')
 
 
 
-  $http.get('data/article1.json')
+ $ionicLoading.show({
+      template: 'Cargando...'
+    });
+
+  $http.get('http://192.168.42.1:8080/articles/product/detail/' + $scope.articleId)
        .then(function(res){
+        $ionicLoading.hide();
           $scope.article = res.data;  
                   
         });

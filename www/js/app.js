@@ -6,7 +6,11 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordova','chart.js'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$rootScope,$ionicHistory) {
+  $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+      $ionicHistory.clearCache();
+   });
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -44,6 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
     })
 
   .state('app.articleList', {
+     cache: false,
     url: '/articleList',
     views: {
       'menuContent': {
@@ -56,7 +61,8 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
 
   //Listado de eventos de una categoría, un día concreto
     .state('app.articleDetail', {
-        url: "articleDetail/:id",
+       cache: false,
+        url: "/articleDetail/:id",
         views: {
             'menuContent': {
                 templateUrl: "templates/articleDetail.html",
@@ -66,6 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
     })
 
      .state('app.articleAdd', {
+       cache: false,
         url: "/articleAdd",
         views: {
             'menuContent': {
@@ -78,6 +85,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
 
 .state('app.clientList', {
     url: '/clientList',
+     cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/clientList.html',
@@ -89,6 +97,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
 
 .state('app.clientDetail', {
     url: '/clientDetail/:id',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'templates/clientDetail.html',
@@ -100,6 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
 
   .state('app.clientAdd', {
         url: "/clientAdd",
+        cache: false,
         views: {
             'menuContent': {
                 templateUrl: "templates/clientAdd.html",
@@ -110,6 +120,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
 
 
   .state('app.saleAdd', {
+     cache: false,
         url: "/saleAdd",
         views: {
             'menuContent': {
@@ -120,6 +131,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
     })
 
     .state('app.saleList', {
+       cache: false,
         url: "/saleList",
         views: {
             'menuContent': {
@@ -130,6 +142,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
     })
 
     .state('app.saleDetail', {
+       cache: false,
     url: '/saleDetail/:id',
     views: {
       'menuContent': {
@@ -141,11 +154,23 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
   })
 
     .state('app.stats', {
+       cache: false,
     url: '/stats',
     views: {
       'menuContent': {
         templateUrl: 'templates/stats.html',
         controller:'StatsController'
+      }
+    },
+
+  })
+
+     .state('app.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/login.html',
+        controller:'LoginController'
       }
     },
 
@@ -180,5 +205,5 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
     }
   })
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/main');
+  $urlRouterProvider.otherwise('/app/login');
 });

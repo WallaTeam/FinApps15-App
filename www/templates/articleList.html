@@ -26,7 +26,7 @@
     <ion-list>
  <div class="list">
 
-    <a  ng-repeat="article in articles | filter:{ name: filtro }" class="item item-avatar" href="#" ng-click="displayArticle(article.id)">
+    <a  ng-repeat="article in articles | filter:{ name: filtro }" class="item item-avatar" href="#" ng-click="displayArticle(article.code)">
       <img src="img/article.png">
       <h2>{{article.name}}</h2>
       <i class="icon ion-chevron-right icon-accessory" style="float:right;"></i>

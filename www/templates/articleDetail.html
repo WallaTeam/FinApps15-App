@@ -42,7 +42,7 @@ Vista de detalle de evento.
 				<span >{{article.category}}</span>
 				<br/>
 				<span class="icon ion-arrow-up-b" style="margin-right:10px;"></span>
-				<span >ID: {{article.id}}</span>
+				<span >ID: {{article.code}}</span>
 				<input ng-show="false" type="text" class="editinput" placeholder="E.g: 44 " ng-model="article.category">
 				<br/>
 
@@ -59,17 +59,17 @@ Vista de detalle de evento.
 	<div class="list">
 		<label class="item item-input item-stacked-label">
 			<span class="input-label"><b>Precio base (€)</b></span></span>
-			<span ng-show="!editing"> <br/>{{article.price}}</span>
-			<input type="number" class="editinput" placeholder="E.g: 23.45€ " ng-model="article.price" ng-show="editing">
+			<span ng-show="!editing"> <br/>{{article.prize}}</span>
+			<input type="number" class="editinput" placeholder="E.g: 23.45€ " ng-model="article.prize" ng-show="editing">
 		</label>
 		<label class="item item-input item-stacked-label">
-			<span class="input-label"><b>IVA (€)</b></span></span>
+			<span class="input-label"><b>IVA (%)</b></span></span>
 			<span ng-show="!editing"> <br/>{{article.vat}}</span>
 			<input type="number" class="editinput" placeholder="E.g: 21 " ng-model="article.vat" ng-show="editing">
 		</label>
 		<label class="item item-input item-stacked-label">
 			<span class="input-label"><b>Precio final (€)</b></span></span>
-			<span > <br/>{{article.price*(article.vat/100 + 1) | number : 2}}</span>
+			<span > <br/>{{article.prize*(article.vat/100 + 1) | number : 2}}</span>
 
 		</label>
 		<label class="item item-input item-stacked-label">

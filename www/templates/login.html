@@ -1,25 +1,74 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+<!--
+Vista de detalle de evento.
+-->
+<ion-view view-title="WallaCash">
+
+<ion-nav-bar class="bar bar-assertive colorBarra">
+<ion-nav-back-button>
+</ion-nav-back-button>
+
+
+<ion-nav-buttons side="left">
+<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+
+</ion-nav-buttons>
+
+</ion-nav-bar>
+<ion-content id="fhm_page" style="background-color:#2c505c;">
+      <div class="fhm_container">
+        <div class="fhm_row" >
+          <div class="fhm_item_double" style="background-color: #84a39e;">
+         
+          <br/>
+       
+          <i class="icon ion-person-stalker principal fhm_text"></i>
+          <br/>
+          <br/>
+            <span class="fhm_text">Bienvenido/a</span>
+            <br/>
+            <span style="color:white;">{{status}}</span>
+          </div>
+         
+        </div>
+
+        <div class="fhm_row" >
+          <div class="fhm_item" style="background-color: #597e84;" ng-click="openMain()">
+           
+         
+          <br/>
+           <img class="imagenCircle" src="img/men1.jpg">
+     
+          <br/>
+            <span class="fhm_text_small">John</span>
+          </div>
+          <div class="fhm_item" style="background-color: #476e75;" ng-click="openMain()">
+            <br/>
+           <img class="imagenCircle" src="img/women1.jpg">
+          <br/>
+        
+            <span class="fhm_text_small">Isabel</span>
+          </div>
+        </div>
+        <div class="fhm_row">
+          <div class="fhm_item" style="background-color: #3a6069;" ng-click="openMain()">
+             <br/>
+           <img class="imagenCircle" src="img/women2.jpg">
+          
+          <br/>
+            <span class="fhm_text_small">Ana</span>
+          </div>
+          <div class="fhm_item" style="background-color: #2c505c;" ng-click="openMain()">
+             <br/>
+           <img class="imagenCircle" src="img/men2.jpg">
+      
+          <br/>
+            <span class="fhm_text_small">Roberto</span>
+          </div>
+        </div>
       </div>
-    </form>
-  </ion-content>
-</ion-modal-view>
+    </ion-content>
+      
+</ion-view>

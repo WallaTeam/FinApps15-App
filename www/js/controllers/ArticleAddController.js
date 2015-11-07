@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('ArticleAddController', function($scope, $ionicModal, $timeout,$http,$state,ionicToast,$ionicHistory,$cordovaBarcodeScanner) {
+.controller('ArticleAddController', function($scope, $ionicModal, $timeout,$http,$state,ionicToast,$ionicHistory,$cordovaBarcodeScanner,$ionicLoading) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -14,10 +14,10 @@ angular.module('starter.controllers')
 
   $scope.article =
   {
-  "id": undefined,
+  "code": undefined,
   "name":"",
   "category":"",
-  "price":undefined,
+  "prize":undefined,
   "vat":undefined,
   "description": "",
   "stock":undefined
@@ -37,7 +37,7 @@ angular.module('starter.controllers')
  $scope.scanBarcode = function() {
       console.log("hi");
         $cordovaBarcodeScanner.scan().then(function(imageData) {
-            $scope.article.id = imageData.text;
+            $scope.article.code = imageData.text;
         }, function(error) {
             console.log("Ha ocurrido un error: " + error);
         });
@@ -47,8 +47,25 @@ angular.module('starter.controllers')
 
   $scope.saveAdd = function(){
     
-    ionicToast.show('Artículo creado', 'bottom', false, 1000);
+
+
+ $ionicLoading.show({
+      template: 'Cargando...'
+    });
+
+$http.post('http://192.168.42.1:8080/articles', $scope.article).then(
+  function(data){
+
+     $ionicLoading.hide();
+     ionicToast.show('Artículo insertado', 'bottom', false, 1000);
      $ionicHistory.goBack();
+  }, function(error){
+
+     $ionicLoading.hide();
+     $ionicHistory.goBack();
+  });
+
+
 
 
   }
@@ -59,5 +76,7 @@ angular.module('starter.controllers')
      $ionicHistory.goBack();
 
   }
+
+
 
 });

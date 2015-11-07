@@ -40,7 +40,7 @@ Vista de detalle de evento.
 <ion-item ng-repeat="article in sale.articleList" >
 <div class="row"  >
   <div class="col col-90" ><b>{{article.name}}</b></div>
-  <div class="col col-10" >{{article.price*(1 + article.vat/100) | number: 2}} €</div>
+  <div class="col col-10" >{{article.prize*(1 + article.vat/100) | number: 2}} €</div>
 </div>
 <ion-option-button class="button-assertive icon ion-trash-a" ng-click="deleteArticle($index)"></ion-option-button>
 </ion-item>
@@ -55,7 +55,7 @@ Vista de detalle de evento.
 
  
 
-<button class="button button-block button-positive colorBarra" style="border: 1px solid #2c505c !important;" ng-click="screen=2">Cerrar venta</button>
+<button ng-disabled="!sale.articleList.length > 0" class="button button-block button-positive colorBarra" style="border: 1px solid #2c505c !important;" ng-click="screen=2">Cerrar venta</button>
 </div>
 <div ng-show="screen==2">
 
@@ -76,7 +76,7 @@ Vista de detalle de evento.
   </div>
   <div ng-show="client" class="item item-text-wrap">
 
-	<span>{{client.id}}</span><br/>
+	<span><b>ID:</b> {{client.code}}</span><br/>
     <span>{{client.name}} {{client.surname}}</span>
 
 	
@@ -89,7 +89,7 @@ Vista de detalle de evento.
   <div class="item item-text-wrap">
     <div class="row">
 	<div class="col">
-		<button class="button button-block button-positive colorBoton" ng-click="showManual()">Tarjeta crédito</button>
+		<button class="button button-block button-positive colorBoton" ng-click="showVisa(); formaPago='tarjeta'">Tarjeta crédito</button>
 	</div>
 	<div class="col">
 		<button class="button button-block button-positive colorBoton" ng-click="formaPago='contado'">Contado</button>

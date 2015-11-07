@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('SaleListController', function($scope, $ionicModal, $timeout,$http,$state) {
+.controller('SaleListController', function($scope, $ionicModal, $timeout,$http,$state,$ionicLoading) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -29,8 +29,14 @@ angular.module('starter.controllers')
   }
 
 
-  $http.get('data/sales.json')
+  
+  $ionicLoading.show({
+      template: 'Cargando...'
+    });
+
+  $http.get('http://192.168.42.1:8080/sales')
        .then(function(res){
+        $ionicLoading.hide();
           $scope.sales = res.data;  
           console.log(res.data);              
         });

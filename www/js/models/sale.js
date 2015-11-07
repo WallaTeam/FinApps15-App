@@ -1,5 +1,5 @@
 function Sale(){
-  this.id = 0;
+  this.code = 0;
   this.client = 0;
   this.date = undefined;
   this.articleList = [];

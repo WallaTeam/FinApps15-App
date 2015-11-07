@@ -24,11 +24,11 @@
     <ion-list>
  <div class="list">
 
-    <a  ng-repeat="client in clients | filter:{ name: filtro }" class="item item-avatar" href="#" ng-click="displayClient(client.id)" >
+    <a  ng-repeat="client in clients | filter:{ name: filtro }" class="item item-avatar" href="#" ng-click="displayClient(client.code)" >
       <img src="img/user.png">
       <h2>{{client.name}} {{client.surname}}</h2>
       <i class="icon ion-chevron-right icon-accessory" style="float:right;"></i>
-      <p>ID Cliente: {{client.id}}</p>
+      <p>ID Cliente: {{client.code}}</p>
 
     </a>
 

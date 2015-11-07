@@ -108,6 +108,12 @@ vertical-align: middle;
     color: white;
     font-size:30px;
 }
+.fhm_text_small{
+
+    font-weight: bold;
+    color: white;
+    font-size:25px;
+}
 
 .colorBarra{
     background-color:#2c505c !important;
@@ -120,4 +126,10 @@ vertical-align: middle;
 
  i.principal {
   font-size: 90px;
+}
+
+
+.imagenCircle {
+    border-radius:100%;
+    max-width:110px;
 }

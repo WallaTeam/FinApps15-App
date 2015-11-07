@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('ArticleListController', function($scope, $ionicModal, $timeout,$http,$state) {
+.controller('ArticleListController', function($scope, $ionicModal, $timeout,$http,$state,$ionicLoading) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -37,8 +37,13 @@ $scope.filtro = "";
   }
 
 
-  $http.get('data/articles.json')
+  $ionicLoading.show({
+      template: 'Cargando...'
+    });
+
+  $http.get('http://192.168.42.1:8080/articles')
        .then(function(res){
+        $ionicLoading.hide();
           $scope.articles = res.data;  
           console.log(res.data);              
         });
