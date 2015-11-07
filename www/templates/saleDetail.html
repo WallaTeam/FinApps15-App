@@ -3,7 +3,7 @@ Vista de detalle de evento.
 -->
 <ion-view view-title="Ver venta">
 
-<ion-nav-bar class="bar bar-assertive">
+<ion-nav-bar class="bar bar-assertive colorBarra">
 <ion-nav-back-button>
 </ion-nav-back-button>
 
@@ -19,22 +19,17 @@ Vista de detalle de evento.
 </ion-nav-buttons>
 
 </ion-nav-bar>
-<ion-content class="description-background">
+<ion-content class="description-background" style="background-color: #d3eae9;">
 <div class="list card">
-	<div class="item">
-		<div class="row">
-			<div class="col col-20"><img src="img/bill.jpg" class="left-image"></div>
-			<div  class="col">
-				<span  class="nombreArticulo">VENTA Nº {{sale.id}}</span>
-				
-				<br/>
-		
-			</div>
-		</div>
-
-
-	</div>
+<div class="item item-divider colorBarra">
+    <span style="color:white;">Información de la venta</span>
+  </div>
+	
 	<div class="list">
+	<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Venta nº:</b></span></span>
+			<span> <br/>{{sale.id}}</span>
+		</label>
 		<label class="item item-input item-stacked-label">
 			<span class="input-label"><b>Fecha:</b></span></span>
 			<span> <br/>{{sale.date}}</span>
@@ -48,8 +43,8 @@ Vista de detalle de evento.
 			<span> <br/>{{sale.finalPrice}} €</span>
 		</label>
 		
-		 <div class="item item-divider">
-    Lista de artículos
+		 <div class="item item-divider colorBarra">
+    <span style="color:white;">Lista de artículos</span>
   </div>
   <div ng-repeat="article in sale.articleList" class="item item-text-wrap">
     

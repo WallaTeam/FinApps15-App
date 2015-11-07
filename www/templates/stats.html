@@ -1,0 +1,62 @@
+<!--
+Vista de detalle de evento.
+-->
+<ion-view view-title="Estadísticas">
+
+<ion-nav-bar class="bar bar-assertive colorBarra">
+<ion-nav-back-button>
+</ion-nav-back-button>
+
+
+<ion-nav-buttons side="left">
+<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+
+
+
+</ion-nav-buttons>
+
+</ion-nav-bar>
+<ion-content class="description-background" style="background-color: #d3eae9;">
+<div class="card">
+  <div class="item item-divider colorBarra" >
+     <span style="color:white;">
+    Clientes más fieles</span>
+  </div>
+  <div class="item item-text-wrap" >
+ <canvas id="pie" class="chart chart-pie"
+  chart-data="data" chart-labels="labels">
+</canvas> 
+  </div>
+<div class="item item-divider colorBarra">
+    <span style="color:white;">
+    Ingresos/gastos por mes</span>
+  </div>
+  <div class="item item-text-wrap">
+  <canvas id="line" class="chart chart-line" chart-data="data2"
+  chart-labels="labels2" chart-legend="true" chart-series="series2"
+  chart-click="onClick" >
+</canvas> 
+  </div>
+  <div class="item item-divider colorBarra">
+    <span style="color:white;">
+    Ventas por producto</span>
+  </div>
+  <div class="item item-text-wrap">
+  <canvas id="bar" class="chart chart-bar"
+  chart-data="data3" chart-labels="labels3">
+</canvas
+  </div>
+
+</div>
+
+
+
+
+
+
+
+</ion-content>
+</ion-view>

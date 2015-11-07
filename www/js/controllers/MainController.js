@@ -16,7 +16,30 @@ angular.module('starter.controllers')
 
 
 
+  $scope.openSaleAdd = function(){
+  
+     $state.go('app.saleAdd');
+  }
 
+ $scope.openClientList = function(){
+  
+     $state.go('app.clientList');
+  }
+
+   $scope.openArticleList = function(){
+  
+     $state.go('app.articleList');
+  }
+
+   $scope.openSaleList = function(){
+  
+     $state.go('app.saleList');
+  }
+
+   $scope.openStats = function(){
+  
+     $state.go('app.stats');
+  }
 
   $scope.saveAdd = function(){
     

@@ -1,9 +1,9 @@
 <!--
 Vista de detalle de evento.
 -->
-<ion-view view-title="Añadir cliente">
+<ion-view view-title="WallaCash">
 
-<ion-nav-bar class="bar bar-assertive">
+<ion-nav-bar class="bar bar-assertive colorBarra">
 <ion-nav-back-button>
 </ion-nav-back-button>
 
@@ -14,18 +14,58 @@ Vista de detalle de evento.
 
 <ion-nav-buttons side="right">
 
-
-
-
-<button   class="button button-icon button-clear ion-checkmark-round" ng-click="saveAdd()"></button>
-<button   class="button button-icon button-clear ion-close-round" ng-click="discardAdd()"></button>
 </ion-nav-buttons>
 
 </ion-nav-bar>
-<ion-content class="description-background">
-Menu principal
-
-
-
-</ion-content>
+<ion-content id="fhm_page" style="background-color:#2c505c;">
+      <div class="fhm_container">
+        <div class="fhm_row" ng-click="openSaleAdd()">
+          <div class="fhm_item_double" style="background-color: #84a39e;">
+         
+          <br/>
+       
+          <i class="icon ion-bag principal fhm_text"></i>
+          <br/>
+          <br/>
+            <span class="fhm_text">Nueva venta</span>
+          </div>
+         
+        </div>
+        <div class="fhm_row" >
+          <div class="fhm_item" style="background-color: #597e84;" ng-click="openClientList()">
+           
+         
+          <br/>
+           <i class="icon ion-person principal fhm_text"></i>
+          <br/>
+          <br/>
+            <span class="fhm_text">Clientes</span>
+          </div>
+          <div class="fhm_item" style="background-color: #476e75;" ng-click="openArticleList()">
+            <br/>
+           <i class="icon ion-cube principal fhm_text"></i>
+          <br/>
+          <br/>
+            <span class="fhm_text">Artículos</span>
+          </div>
+        </div>
+        <div class="fhm_row">
+          <div class="fhm_item" style="background-color: #3a6069;" ng-click="openSaleList()">
+             <br/>
+           <i class="icon ion-social-euro principal fhm_text"></i>
+          <br/>
+          <br/>
+            <span class="fhm_text">Ventas</span>
+          </div>
+          <div class="fhm_item" style="background-color: #2c505c;" ng-click="openStats()">
+             <br/>
+           <i class="icon ion-stats-bars principal fhm_text"></i>
+          <br/>
+          <br/>
+            <span class="fhm_text">Estadísticas</span>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+      
 </ion-view>

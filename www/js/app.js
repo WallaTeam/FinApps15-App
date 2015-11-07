@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordova','chart.js'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -140,6 +140,18 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
 
   })
 
+    .state('app.stats', {
+    url: '/stats',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/stats.html',
+        controller:'StatsController'
+      }
+    },
+
+  })
+
+
   .state('app.browse', {
       url: '/browse',
       views: {
@@ -166,7 +178,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
         controller: 'PlaylistCtrl'
       }
     }
-  });
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/main');
 });

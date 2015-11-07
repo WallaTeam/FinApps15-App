@@ -24,50 +24,6 @@ angular.module('starter.controllers')
           "stock":100
 
 
-        },
-        {
-          "id":4,
-          "name":"Example Article 4",
-          "category":"Mesas",
-          "price":10.12,
-          "vat":21,
-          "description": "Description",
-          "stock":100
-
-
-        },
-        {
-          "id":4,
-          "name":"Example Article 4",
-          "category":"Mesas",
-          "price":10.12,
-          "vat":21,
-          "description": "Description",
-          "stock":100
-
-
-        },
-        {
-          "id":4,
-          "name":"Example Article 4",
-          "category":"Mesas",
-          "price":10.12,
-          "vat":21,
-          "description": "Description",
-          "stock":100
-
-
-        },
-        {
-          "id":4,
-          "name":"Example Article 4",
-          "category":"Mesas",
-          "price":10.12,
-          "vat":21,
-          "description": "Description",
-          "stock":100
-
-
         }
 
     ],

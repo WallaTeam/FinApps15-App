@@ -62,3 +62,62 @@
 	 border: 3px solid #dadada !important;
      border-radius: 7px !important;
 }
+
+
+#fhm_page .scroll,
+.fhm_container {
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background-color:#2c505c;
+}
+
+.fhm_page{
+    background-color:#2c505c;
+}
+
+.fhm_row {
+  /* position: absolute; */
+  height: 55.0%;
+  left:0;
+  right:0;
+  background-color:#2c505c;
+  clear:both;
+}
+.fhm_item {
+  height: 100%;
+  width:49.95%;
+text-align: center;
+vertical-align: middle;
+  float:left;
+}
+
+.fhm_item_double {
+  height: 100%;
+  width:100%;
+text-align: center;
+vertical-align: middle;
+  float:left;
+}
+
+.fhm_text{
+
+    font-weight: bold;
+    color: white;
+    font-size:30px;
+}
+
+.colorBarra{
+    background-color:#2c505c !important;
+ }
+
+.colorBoton{
+    background-color:#597e84 !important;
+    border: 1px solid #2c505c !important;
+ }
+
+ i.principal {
+  font-size: 90px;
+}

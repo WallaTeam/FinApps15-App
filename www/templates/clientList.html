@@ -1,5 +1,5 @@
 <ion-view view-title="Lista de clientes">
-<ion-nav-bar class="bar bar-assertive">
+<ion-nav-bar class="bar bar-assertive colorBarra">
 <ion-nav-back-button>
 </ion-nav-back-button>
 
@@ -14,7 +14,7 @@
 
 
 </ion-nav-bar>
-  <ion-content>
+  <ion-content >
      <form ng-submit="buscar()"  class="search ng-cloak">
           <label class="item item-input  barraBusqueda" >
               <i class="icon ion-search placeholder-icon letraNegra"></i>
@@ -24,7 +24,7 @@
     <ion-list>
  <div class="list">
 
-    <a  ng-repeat="client in clients | filter:{ name: filtro }" class="item item-avatar" href="#" ng-click="displayClient(client.id)">
+    <a  ng-repeat="client in clients | filter:{ name: filtro }" class="item item-avatar" href="#" ng-click="displayClient(client.id)" >
       <img src="img/user.png">
       <h2>{{client.name}} {{client.surname}}</h2>
       <i class="icon ion-chevron-right icon-accessory" style="float:right;"></i>

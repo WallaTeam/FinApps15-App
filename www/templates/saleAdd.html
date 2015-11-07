@@ -3,7 +3,7 @@ Vista de detalle de evento.
 -->
 <ion-view view-title="Añadir venta">
 
-<ion-nav-bar class="bar bar-assertive">
+<ion-nav-bar class="bar bar-assertive colorBarra">
 <ion-nav-back-button>
 </ion-nav-back-button>
 
@@ -14,27 +14,27 @@ Vista de detalle de evento.
 
 
 </ion-nav-bar>
-<ion-content class="description-background">
+<ion-content class="description-background" >
 <!-- Botones de agnadir nuevo articulo -->
 <div ng-show="screen==1">
 <div class="row">
 	<div class="col">
-		<button class="button button-block button-positive" ng-click="scanBarcode()">Código barras</button>
+		<button class="button button-block button-positive colorBoton" ng-click="scanBarcode()" style="font-weight: bold;">Código barras</button>
 	</div>
 	<div class="col">
-		<button class="button button-block button-positive" ng-click="showManual()">Manual</button>
+		<button class="button button-block button-positive colorBoton"  ng-click="showManual()" style="font-weight: bold;">Manual</button>
 	</div>
 </div>
 
-<ion-scroll zooming="true" direction="y" style="width: 100%; height: 350px">
-<div class="row" style="text-align: center;">
+<ion-scroll zooming="true" direction="y" style="width: 100%; height: 300px">
+<!--<div class="row" style="text-align: center;">
   <div class="col col-70" >Nombre
   </div>
   <div class="col col-20" >Precio</div>
   <div class="col col-10">
   	
   </div>
-</div>
+</div>-->
 <ion-list can-swipe="true">
 
 <ion-item ng-repeat="article in sale.articleList" >
@@ -47,29 +47,29 @@ Vista de detalle de evento.
 </ion-list>
 </ion-scroll>
 
-  <a class="item item-icon-left" style="background-color: #a2acac;" href="#" >
-    <i class="icon ion-bag"></i>
-    <span>Total:</span>
-    <span style="float: right;"> {{getTotalPrice() | number: 2}} €</span>
+  <a class="item item-icon-left" style="background-color: #597e84; " href="#" >
+    <i class="icon ion-bag" style="color:white;"></i>
+    <span style="color:white; font-weight: bold;">Total:</span>
+    <span style="float: right; color:white; font-weight: bold;"> {{getTotalPrice() | number: 2}} €</span>
   </a>
 
  
 
-<button class="button button-block button-positive" ng-click="screen=2">Cerrar venta</button>
+<button class="button button-block button-positive colorBarra" style="border: 1px solid #2c505c !important;" ng-click="screen=2">Cerrar venta</button>
 </div>
 <div ng-show="screen==2">
 
 <div class="card">
-  <div class="item item-divider">
-    Cliente
+  <div class="item item-divider colorBarra">
+    <span style="color:white;">Cliente</span>
   </div>
   <div class="item item-text-wrap">
     <div class="row">
 	<div class="col">
-		<button class="button button-block button-positive" ng-click="showManual()">Leer NFC</button>
+		<button class="button button-block button-positive colorBoton" ng-click="showManual()">Leer NFC</button>
 	</div>
 	<div class="col">
-		<button class="button button-block button-positive" ng-click="showManualClient()">Manual</button>
+		<button class="button button-block button-positive colorBoton" ng-click="showManualClient()">Manual</button>
 	</div>
 	</div>
 	
@@ -83,16 +83,16 @@ Vista de detalle de evento.
   </div>
 </div>
 <div class="card">
-  <div class="item item-divider">
-    Forma de pago
+  <div class="item item-divider colorBarra">
+    <span style="color:white;">Forma de pago</span>
   </div>
   <div class="item item-text-wrap">
     <div class="row">
 	<div class="col">
-		<button class="button button-block button-positive" ng-click="showManual()">Tarjeta crédito</button>
+		<button class="button button-block button-positive colorBoton" ng-click="showManual()">Tarjeta crédito</button>
 	</div>
 	<div class="col">
-		<button class="button button-block button-positive" ng-click="formaPago='contado'">Contado</button>
+		<button class="button button-block button-positive colorBoton" ng-click="formaPago='contado'">Contado</button>
 	</div>
 	</div>
 	
@@ -117,7 +117,7 @@ Vista de detalle de evento.
      Imprimir ticket
   </li>
 
-<button class="button button-block button-positive" ng-click="endVenta()">Finalizar venta</button>
+<button class="button button-block button-positive colorBoton" ng-click="endVenta()">Finalizar venta</button>
 </div>
 
 </ion-content>
