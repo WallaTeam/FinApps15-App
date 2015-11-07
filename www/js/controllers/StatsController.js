@@ -22,7 +22,7 @@ angular.module('starter.controllers')
         $state.go('app.saleDetail', {id: id});
     };
 
- $scope.labels = ["Smartphone 4G", "Tarjeta MicroSD 4Gb", "Cable Ethernet"];
+ $scope.labels = ["Luis Jesús Pardo", "Raúl Mena", "Ismael Hernandez"];
   $scope.data = [300, 500, 100];
 
    $scope.labels2 = ["Enero", "Febrero", "Marzo", "Abril"];
@@ -33,7 +33,7 @@ angular.module('starter.controllers')
   ];
 
 
- $scope.labels3 = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+ $scope.labels3 = ['2009', '2010', '2011', '2012', '2013', '2014', '2015'];
   $scope.series3 = ['Series A', 'Series B'];
 
   $scope.data3 = [
