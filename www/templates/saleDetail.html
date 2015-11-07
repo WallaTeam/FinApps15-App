@@ -1,0 +1,70 @@
+<!--
+Vista de detalle de evento.
+-->
+<ion-view view-title="Ver venta">
+
+<ion-nav-bar class="bar bar-assertive">
+<ion-nav-back-button>
+</ion-nav-back-button>
+
+
+<ion-nav-buttons side="left">
+<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+
+
+
+</ion-nav-buttons>
+
+</ion-nav-bar>
+<ion-content class="description-background">
+<div class="list card">
+	<div class="item">
+		<div class="row">
+			<div class="col col-20"><img src="img/bill.jpg" class="left-image"></div>
+			<div  class="col">
+				<span  class="nombreArticulo">VENTA Nº {{sale.id}}</span>
+				
+				<br/>
+		
+			</div>
+		</div>
+
+
+	</div>
+	<div class="list">
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Fecha:</b></span></span>
+			<span> <br/>{{sale.date}}</span>
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Cliente:</b></span></span>
+			<span> <br/>{{sale.client}}</span>
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Precio total:</b></span></span>
+			<span> <br/>{{sale.finalPrice}} €</span>
+		</label>
+		
+		 <div class="item item-divider">
+    Lista de artículos
+  </div>
+  <div ng-repeat="article in sale.articleList" class="item item-text-wrap">
+    
+    <div class="row"  >
+  <div class="col col-80" ><b>{{article.name}}</b></div>
+  <div class="col col-20" >{{article.price*(1 + article.vat/100) | number: 2}} €</div>
+</div>
+  </div>
+	</div>
+	
+
+</div>
+
+
+
+
+</ion-content>
+</ion-view>

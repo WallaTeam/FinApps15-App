@@ -15,7 +15,7 @@
 .articulo-detalles input{float:left;}
 
 .editinput{
-	 border: 2px solid #dadada !important;
+	 border: 3px solid #dadada !important;
      border-radius: 7px !important;
 }
 
@@ -23,4 +23,42 @@
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
+}
+
+.scroll-view {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll {
+  height: 60%;
+}
+
+.headerDivider {
+     border-left:1px solid #38546d; 
+     border-right:1px solid #16222c; 
+     height:20px;
+     float: right;
+     right:249px;
+     
+}
+
+
+.itemDivider {
+     border-left:1px solid #38546d; 
+     border-right:1px solid #16222c; 
+     height:30px;
+     float: right;
+     right:249px;
+     top:10px; 
+}
+
+
+.botonBorrar{
+	margin-top: 0px !important;
+}
+
+.articleList{
+	 border: 3px solid #dadada !important;
+     border-radius: 7px !important;
 }

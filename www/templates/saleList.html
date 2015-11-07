@@ -1,4 +1,4 @@
-<ion-view view-title="Lista de artículos">
+<ion-view view-title="Lista de ventas">
 <ion-nav-bar class="bar bar-assertive">
 <ion-nav-back-button>
 </ion-nav-back-button>
@@ -8,16 +8,12 @@
 <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
 </ion-nav-buttons>
 
-<ion-nav-buttons side="right">
-<button class="button button-icon button-clear ion-plus" ng-click="addArticle()"></button>
-</ion-nav-buttons>
+
 
 
 </ion-nav-bar>
-
-
   <ion-content>
-   <form ng-submit="buscar()"  class="search ng-cloak">
+     <form ng-submit="buscar()"  class="search ng-cloak">
           <label class="item item-input  barraBusqueda" >
               <i class="icon ion-search placeholder-icon letraNegra"></i>
               <input type="search" ng-model="filtro" placeholder="Buscar por nombre">
@@ -26,11 +22,12 @@
     <ion-list>
  <div class="list">
 
-    <a  ng-repeat="article in articles | filter:{ name: filtro }" class="item item-avatar" href="#" ng-click="displayArticle(article.id)">
-      <img src="img/article.png">
-      <h2>{{article.name}}</h2>
+    <a  ng-repeat="sale in sales | filter:{ id: filtro }" class="item item-avatar" href="#" ng-click="displaySale(sale.id)">
+      <img src="img/bill.jpg">
+      <h2>Venta nº {{sale.id}}</h2>
       <i class="icon ion-chevron-right icon-accessory" style="float:right;"></i>
-      <p>{{article.category}} - {{article.stock}} en Stock</p>
+       <p>{{sale.date}}  - Total: {{sale.finalPrice}} €</p>
+
 
     </a>
 

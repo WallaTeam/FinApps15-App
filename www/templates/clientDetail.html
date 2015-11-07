@@ -1,0 +1,69 @@
+<!--
+Vista de detalle de evento.
+-->
+<ion-view view-title="Ver cliente">
+
+<ion-nav-bar class="bar bar-assertive">
+<ion-nav-back-button>
+</ion-nav-back-button>
+
+
+<ion-nav-buttons side="left">
+<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+
+
+
+
+<button   ng-if="!editing"class="button button-icon button-clear ion-edit" ng-click="startEdit()"></button>
+<button  ng-if="editing" class="button button-icon button-clear ion-checkmark-round" ng-click="saveEdit()"></button>
+<button  ng-if="editing" class="button button-icon button-clear ion-close-round" ng-click="discardEdit()"></button>
+<button  ng-if="!editing"class="button button-icon button-clear ion-trash-a" ng-click="delete()"></button>
+</ion-nav-buttons>
+
+</ion-nav-bar>
+<ion-content class="description-background">
+<div class="list card">
+	<div class="item">
+		<div class="row">
+			<div class="col col-20"><img src="img/user.png" class="left-image"></div>
+			<div  class="col">
+				<span ng-show="!editing" ng-show="editing" class="nombreArticulo">{{client.name}}</span>
+				<input ng-show="editing" type="text" class="editinput" placeholder="E.g: Luis Pellicer " ng-model="client.name">
+				<span ng-show="!editing" ng-show="editing" class="nombreArticulo">{{client.surname}}</span>
+				<input ng-show="editing" type="text" class="editinput" placeholder="E.g: Luis Pellicer " ng-model="client.surname">
+				<br/>
+
+
+				<span class="icon ion-pricetag" style="margin-right:10px;"></span>
+				<span >ID: {{client.id}}</span>
+				<br/>
+		
+			</div>
+		</div>
+
+
+	</div>
+	<div class="list">
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Fecha de nacimiento</b></span></span>
+			<span ng-show="!editing"> <br/>{{client.birthDate}}</span>
+			<input type="text" class="editinput" placeholder="E.g: 18/07/1994 " ng-model="client.birthDate" ng-show="editing">
+		</label>
+		
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Código postal</b></span></span>
+			<span ng-show="!editing"> <br/>{{client.postalCode}}</span>
+			<input type="number" class="editinput" placeholder="E.g: 08018 " ng-model="client.postalCode" ng-show="editing">
+		</label>
+	</div>
+
+</div>
+
+
+
+
+</ion-content>
+</ion-view>

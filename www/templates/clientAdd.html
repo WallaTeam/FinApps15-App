@@ -1,0 +1,70 @@
+<!--
+Vista de detalle de evento.
+-->
+<ion-view view-title="Añadir cliente">
+
+<ion-nav-bar class="bar bar-assertive">
+<ion-nav-back-button>
+</ion-nav-back-button>
+
+
+<ion-nav-buttons side="left">
+<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+
+
+
+
+<button   class="button button-icon button-clear ion-checkmark-round" ng-click="saveAdd()"></button>
+<button   class="button button-icon button-clear ion-close-round" ng-click="discardAdd()"></button>
+</ion-nav-buttons>
+
+</ion-nav-bar>
+<ion-content class="description-background">
+<div class="list card">
+	<div class="item">
+		<h2>Detalles del cliente</h2>
+
+
+	</div>
+
+	<div class="list">
+		
+
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>DNI Cliente</b></span></span>
+			<input type="text" class="editinput" placeholder="E.g: 3431234 " ng-model="client.id" >
+		</label>
+
+		
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Nombre</b></span></span>
+			<input type="text" class="editinput" placeholder="E.g: Alberto " ng-model="client.name" >
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Apellidos</b></span></span>
+			<input type="text" class="editinput" placeholder="E.g: Rodríguez " ng-model="client.surname" >
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Fecha de nacimiento</b></span></span>
+			<input type="text" class="editinput" placeholder="E.g: 18/07/1994 " ng-model="client.birthDate" >
+		</label>
+		
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Código postal</b></span></span>
+
+			<input type="number" class="editinput" placeholder="E.g: 21 " ng-model="client.postalCode">
+		</label>
+		
+	
+	</div>
+
+</div>
+
+
+
+
+</ion-content>
+</ion-view>

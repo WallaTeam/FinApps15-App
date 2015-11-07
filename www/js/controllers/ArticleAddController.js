@@ -45,12 +45,9 @@ angular.module('starter.controllers')
 
 
 
-
-
-
   $scope.saveAdd = function(){
     
-    ionicToast.show('Artículo actualizado', 'bottom', false, 1000);
+    ionicToast.show('Artículo creado', 'bottom', false, 1000);
      $ionicHistory.goBack();
 
 
@@ -63,9 +60,4 @@ angular.module('starter.controllers')
 
   }
 
-  $http.get('data/articles.json')
-       .then(function(res){
-          $scope.articles = res.data;  
-          console.log(res.data);              
-        });
 });

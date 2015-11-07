@@ -32,6 +32,17 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
     controller: 'AppCtrl'
   })
 
+  .state('app.main', {
+      url: '/main',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/main.html',
+          controller:'MainController'
+        }
+      },
+
+    })
+
   .state('app.articleList', {
     url: '/articleList',
     views: {
@@ -55,7 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
     })
 
      .state('app.articleAdd', {
-        url: "articleAdd",
+        url: "/articleAdd",
         views: {
             'menuContent': {
                 templateUrl: "templates/articleAdd.html",
@@ -63,6 +74,71 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
             }
         }
     })
+
+
+.state('app.clientList', {
+    url: '/clientList',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/clientList.html',
+        controller:'ClientListController'
+      }
+    },
+
+  })
+
+.state('app.clientDetail', {
+    url: '/clientDetail/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/clientDetail.html',
+        controller:'ClientDetailController'
+      }
+    },
+
+  })
+
+  .state('app.clientAdd', {
+        url: "/clientAdd",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/clientAdd.html",
+                controller: 'ClientAddController'
+            }
+        }
+    })
+
+
+  .state('app.saleAdd', {
+        url: "/saleAdd",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/saleAdd.html",
+                controller: 'SaleAddController'
+            }
+        }
+    })
+
+    .state('app.saleList', {
+        url: "/saleList",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/saleList.html",
+                controller: 'SaleListController'
+            }
+        }
+    })
+
+    .state('app.saleDetail', {
+    url: '/saleDetail/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/saleDetail.html',
+        controller:'SaleDetailController'
+      }
+    },
+
+  })
 
   .state('app.browse', {
       url: '/browse',
@@ -92,5 +168,5 @@ angular.module('starter', ['ionic', 'starter.controllers','ionic-toast','ngCordo
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/main');
 });

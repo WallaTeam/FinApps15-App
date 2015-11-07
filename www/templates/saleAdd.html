@@ -1,0 +1,124 @@
+<!--
+Vista de detalle de evento.
+-->
+<ion-view view-title="Añadir venta">
+
+<ion-nav-bar class="bar bar-assertive">
+<ion-nav-back-button>
+</ion-nav-back-button>
+
+
+<ion-nav-buttons side="left">
+<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+</ion-nav-buttons>
+
+
+</ion-nav-bar>
+<ion-content class="description-background">
+<!-- Botones de agnadir nuevo articulo -->
+<div ng-show="screen==1">
+<div class="row">
+	<div class="col">
+		<button class="button button-block button-positive" ng-click="scanBarcode()">Código barras</button>
+	</div>
+	<div class="col">
+		<button class="button button-block button-positive" ng-click="showManual()">Manual</button>
+	</div>
+</div>
+
+<ion-scroll zooming="true" direction="y" style="width: 100%; height: 350px">
+<div class="row" style="text-align: center;">
+  <div class="col col-70" >Nombre
+  </div>
+  <div class="col col-20" >Precio</div>
+  <div class="col col-10">
+  	
+  </div>
+</div>
+<ion-list can-swipe="true">
+
+<ion-item ng-repeat="article in sale.articleList" >
+<div class="row"  >
+  <div class="col col-90" ><b>{{article.name}}</b></div>
+  <div class="col col-10" >{{article.price*(1 + article.vat/100) | number: 2}} €</div>
+</div>
+<ion-option-button class="button-assertive icon ion-trash-a" ng-click="deleteArticle($index)"></ion-option-button>
+</ion-item>
+</ion-list>
+</ion-scroll>
+
+  <a class="item item-icon-left" style="background-color: #a2acac;" href="#" >
+    <i class="icon ion-bag"></i>
+    <span>Total:</span>
+    <span style="float: right;"> {{getTotalPrice() | number: 2}} €</span>
+  </a>
+
+ 
+
+<button class="button button-block button-positive" ng-click="screen=2">Cerrar venta</button>
+</div>
+<div ng-show="screen==2">
+
+<div class="card">
+  <div class="item item-divider">
+    Cliente
+  </div>
+  <div class="item item-text-wrap">
+    <div class="row">
+	<div class="col">
+		<button class="button button-block button-positive" ng-click="showManual()">Leer NFC</button>
+	</div>
+	<div class="col">
+		<button class="button button-block button-positive" ng-click="showManualClient()">Manual</button>
+	</div>
+	</div>
+	
+  </div>
+  <div ng-show="client" class="item item-text-wrap">
+
+	<span>{{client.id}}</span><br/>
+    <span>{{client.name}} {{client.surname}}</span>
+
+	
+  </div>
+</div>
+<div class="card">
+  <div class="item item-divider">
+    Forma de pago
+  </div>
+  <div class="item item-text-wrap">
+    <div class="row">
+	<div class="col">
+		<button class="button button-block button-positive" ng-click="showManual()">Tarjeta crédito</button>
+	</div>
+	<div class="col">
+		<button class="button button-block button-positive" ng-click="formaPago='contado'">Contado</button>
+	</div>
+	</div>
+	
+  </div>
+<div  ng-show="formaPago=='contado'"class="item item-text-wrap">
+  <b>PAGADO:</b>
+    <input type="number" class="editinput"  ng-model="pagado" >
+    </div>
+  <div ng-show="formaPago=='contado'" class="item item-text-wrap">
+    <b>TOTAL:</b> {{getTotalPrice() | number: 2}} €
+    <br/>
+    
+    <b>CAMBIO:</b> {{pagado - getTotalPrice() | number:2}}
+ 
+	
+  </div>
+</div>
+<li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     Imprimir ticket
+  </li>
+
+<button class="button button-block button-positive" ng-click="endVenta()">Finalizar venta</button>
+</div>
+
+</ion-content>
+</ion-view>
